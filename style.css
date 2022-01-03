@@ -1,0 +1,534 @@
+body {
+  font-family: Nunito Sans, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  min-height: 100vh;
+  background: linear-gradient(
+    140deg,
+    rgb(251, 219, 137) 0%,
+    rgb(251, 219, 137) 20%,
+    rgb(244, 138, 130) 100%
+  );
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+}
+
+.login__screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  border-radius: 15px;
+  width: 37%;
+  height: 70%;
+  color: white;
+  background: linear-gradient(to right bottom, #fbdb8963, #f6e3e180);
+}
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login__field,
+.btn__login {
+  border: none;
+  height: 2.1rem;
+  width: 16rem;
+  margin: 1rem;
+  background-color: transparent;
+  color: white;
+}
+
+.login__field {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-bottom: 3px solid white;
+}
+
+.login__field::placeholder {
+  color: white;
+  font-weight: 600;
+  opacity: 1;
+}
+
+.logo__login {
+  width: 5rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+.login__message {
+  margin: 0.2rem;
+}
+
+.btn__login {
+  background: linear-gradient(to right bottom, #fbdb89, #f48982);
+  border-radius: 2px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0.4rem 0;
+}
+
+.container__main {
+  display: flex;
+  flex-direction: column;
+  margin: 6rem auto;
+  max-width: 80rem;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 50rem;
+  box-shadow: 0 2rem 6rem 0.5rem rgb(97 85 81 / 20%);
+}
+
+.header__navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 7rem;
+  background-color: rgb(249, 245, 243);
+}
+
+form {
+  display: flex;
+  height: 50%;
+}
+
+.img__logo {
+  height: 3rem;
+}
+
+.input__search {
+  min-width: 20rem;
+  border-radius: 3rem;
+  border: none;
+  padding-left: 2rem;
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 60%;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.nav__buttons,
+.nav__buttons--wrapper {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn__nav {
+  width: 6.5rem;
+  background-color: transparent;
+  border-color: transparent;
+  padding: 0 0.2rem;
+  font-size: 0.9rem;
+}
+
+.nav__buttons--wrapper {
+  background-color: transparent;
+  padding: 0 0.9rem;
+  transition: background-color 0.3s ease-in-out;
+  position: relative;
+}
+
+.nav__buttons--wrapper:hover {
+  background-color: rgba(228, 228, 228, 0.418);
+}
+
+.btn__search {
+  background-image: linear-gradient(to right bottom, #fbdb89, #f48982);
+  width: 12rem;
+  font-size: 1rem;
+  border-radius: 3rem;
+  border: none;
+  color: white;
+  transform: translateX(-3rem);
+  transition: transform 0.4s ease-in-out;
+}
+
+.btn__search:hover {
+  transform: scale(105%) translateX(-3rem);
+}
+
+.bookmarks_list {
+  position: absolute;
+  width: 24rem;
+  max-height: 30rem;
+  overflow-y: scroll;
+  top: 6rem;
+  right: -3rem;
+  z-index: 10;
+  background-color: white;
+  padding: 0rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s 0.2s;
+  box-shadow: 0 0.8rem 5rem 2rem rgb(97 85 81 / 10%);
+  border-radius: 5px;
+}
+
+.bookmarks_list .recipe__result {
+  margin: 2rem 3rem;
+}
+
+.wrapper--bookmarks_list:hover .bookmarks_list {
+  visibility: visible;
+  opacity: 1;
+}
+
+.contents {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 20rem 10rem 2fr 16rem;
+  height: 100%;
+}
+
+.results__tab {
+  grid-column: 1/2;
+  grid-row: 1/5;
+  background-color: white;
+  align-items: center;
+  justify-content: start;
+}
+
+.recipe__list {
+  align-items: center;
+  justify-content: start;
+}
+
+.loading__spinner {
+  width: 100%;
+  margin: 5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.loading__spinner--icon {
+  height: 9rem;
+  animation: rotate 2s infinite linear;
+  opacity: 0.4;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.error {
+  display: grid;
+  grid-template-columns: 0.8fr 2fr;
+  align-items: center;
+  justify-content: start;
+  margin: 5rem auto;
+  width: 60%;
+}
+
+.error__msg {
+  grid-column: 2/3;
+}
+
+.error--icon {
+  width: 2.5rem;
+  opacity: 45%;
+}
+
+.recipe__result {
+  display: grid;
+  margin: 3rem auto;
+  width: 79%;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  justify-content: flex-start;
+  transition: width 0.5s;
+}
+
+.recipe__result:hover {
+  width: 81%;
+}
+
+.recipe__thumbnail {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  grid-column: 1/2;
+  grid-row: 1/3;
+}
+
+h2.recipe__result--heading {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: rgb(243, 142, 130);
+  grid-column: 2/3;
+  grid-template-rows: 1/2;
+  margin: 0;
+}
+
+.recipe__author {
+  margin: 0;
+}
+
+.pagination {
+  margin: 8rem auto;
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+}
+
+.btn__pagination {
+  background-color: rgba(249, 245, 243, 0.712);
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+  font-weight: 600;
+  color: rgb(241, 131, 119);
+}
+
+button.pagination--next {
+  margin-left: auto;
+}
+
+.food__background {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  background-image: url("https://res.cloudinary.com/dawb3psft/image/upload/v1640261818/Recipes_Project-API/recipe_497.jpg");
+  background-blend-mode: overlay;
+  filter: blur(0.01rem);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  position: relative;
+}
+
+.food__background:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to right bottom, #fbdb89c5, #f48a82b0);
+  opacity: 0.5;
+}
+
+.recipe__wrapper {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  background-color: rgb(249, 245, 243);
+  padding: 0 3rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.recipe__info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 4.5rem;
+}
+
+.recipe__title {
+  width: 30rem;
+  transform: translateY(20%) skewY(-6deg);
+  text-align: center;
+}
+
+.h2__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+  text-transform: uppercase;
+}
+
+.recipe__title span {
+  background-image: linear-gradient(160deg, #fbdb89 20%, #f48a82 95%);
+  -webkit-box-decoration-break: clone;
+  padding: 0.6rem 0.8rem;
+}
+
+.recipe__detail {
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 7rem;
+}
+
+.time__span {
+  font-size: 0.9rem;
+}
+
+.detail--2 {
+  margin-right: 11rem;
+  width: 16rem;
+}
+
+.recipe_detail--icon {
+  height: 1.5rem;
+}
+
+.recipe__update__btns {
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.btn__update--serving:hover {
+  transform: translateY(-10%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn__bookmark--serving {
+  opacity: 0.6;
+}
+
+.btn--active {
+  opacity: 1;
+}
+
+.btn__bookmark--serving:hover {
+  transform: scale(108%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn__bookmark--serving {
+  height: 3.5rem;
+  padding: 1rem;
+  border-radius: 50%;
+  background-image: linear-gradient(160deg, #fbdb89 20%, #f48a82 95%);
+}
+
+.recipe_detail--bookmark--icon {
+  height: 1.6rem;
+}
+
+.recipe__ingredients {
+  background-color: rgb(242, 239, 238);
+  grid-row: 3/4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  padding: 2rem 0;
+}
+
+h2.recipe__heading {
+  font-size: 1.3rem;
+  color: rgb(243, 142, 130);
+}
+
+.ingredients__section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 8rem;
+  list-style: none;
+}
+
+.ingredients__row {
+  display: flex;
+}
+
+.ingredient_detail--icon {
+  height: 1.2rem;
+  margin-right: 0.7rem;
+}
+
+.how_to_section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(249, 245, 243);
+  flex-direction: column;
+  padding: 4rem 1rem;
+}
+
+.recipe__credits {
+  font-size: 1.1rem;
+  text-align: center;
+  width: 34rem;
+  color: rgb(134, 134, 134);
+}
+
+h2.heading--2 {
+  margin: 0rem;
+  padding: 0;
+}
+
+.btn__directions {
+  padding: 1rem 1.4rem;
+  background-image: linear-gradient(160deg, #fbdb89 10%, #f48a82 95%);
+  border-radius: 30px;
+  color: white;
+  margin-top: 0.5rem;
+  transition: transform 0.4s ease-in-out;
+}
+
+.btn__directions:hover {
+  transform: scale(105%);
+}
+
+.overlay,
+.login__screen--overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  z-index: 100;
+  transition: all 0.5s;
+}
+
+.add__recipe-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 4rem 6rem rgb(0 0 0 / 25%);
+  background-color: #fff;
+  border-radius: 9px;
+  padding: 5rem 5rem;
+  z-index: 1000;
+  transition: all 0.5s;
+}
+
+.btn--close {
+  position: absolute;
+  right: 4rem;
+  top: 1rem;
+  font-size: 1.1rem;
+}
+
+.hidden {
+  display: none;
+}

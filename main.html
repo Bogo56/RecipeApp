@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login__screen--overlay hidden"></div>
+    <div class="login__screen hidden">
+        <img src="img/favicon.png" class="logo__login">
+        <h3>Login to start using the App</h3>
+        <p class="login__message hidden"></p>
+        <form class="login__form">
+            <input class="login__field field--username"  placeholder="Username" type="text" required>
+            <input class="login__field field--password"  placeholder="Password" type="password" required>
+            <button class="btn__login">Login</button>
+        </form>
+    </div>
+    <container class= "container__main">
+        <header class="header__navigation">
+            <img class= "img__logo" src="img/logo.png">
+            <form>
+                <input class ="input__search" type="text" placeholder="Напр: супа, десерт, салата ...">
+                <button class="btn btn__search">ТЪРСЕНЕ</button>
+            </form>
+            <div class="nav__buttons">
+                <div class="nav__buttons--wrapper">
+                    <img  class="recipe_detail--icon" src="img/notes_.png">
+                    <button class="btn btn__nav btn__nav--add">
+                        ДОБАВИ
+                    </button>
+                </div>
+                <div class="nav__buttons--wrapper wrapper--bookmarks_list">
+                    <img  class="recipe_detail--icon " src="img/bookmark_grad.png">
+                    <button class="btn btn__nav btn__nav--bookmark">
+                        ЗАПАЗЕНИ
+                    </button>
+
+                    <!-- BOOKMARKS -->
+
+                    <ul class ="bookmarks_list">
+                        <a class = "recipe__link" href= "#testing">
+                            <div class="recipe__result ">
+                                <img class="recipe__thumbnail" src="img/sample_food.jpg">
+                                <h2 class ="recipe__result--heading">
+                                    Oxtail SlowCooked Stew
+                                </h2>
+                                <p class="recipe__author">Bogo Tsvetkov</p>
+                            </div>
+                        </a>
+                        
+                    </ul>
+                    
+                </div>
+            </div>
+        </header>
+        <div class="contents">
+            <div class = "results__tab">
+                <div class="recipe__list">
+
+                    <!-- SPINNER -->
+                    <!-- <div class="loading__spinner">
+                        <object class="loading__spinner--icon" data="img/spinner.svg" type="image/svg+xml"></object>
+                    </div> -->
+
+                    <!-- Error Message -->
+                    <!-- <div class="error">
+                        <img class="error--icon" src="./img/error.svg">
+                        <p class="error__msg">Message</p>
+                    </div> -->
+
+                    <!-- SEARCH RESULT -->
+                    <!-- <a class = "recipe__link" href= "#testing">
+                        <div class="recipe__result">
+                            <img class="recipe__thumbnail" src="img/sample_food.jpg">
+                            <h2 class ="recipe__result--heading">
+                                Oxtail SlowCooked Stew
+                            </h2>
+                            <p class="recipe__author">Bogo Tsvetkov</p>
+                        </div>
+                    </a> -->
+
+                </div>
+
+                <!-- PAGINATION -->
+                <div class = "pagination">
+                    <!-- <button class="btn btn__pagination pagination--prev" data-nav="prev">← Page 2 </button>
+                    <button class=" btn btn__pagination pagination--next" data-nav="next">Page 3 →</button> -->
+                </div>
+                
+            </div>
+            <div class="food__background">
+                <div class="recipe__title">
+                    <h2 class= "h2__title">
+                        <span>Сладкиш с тиква и стафиди</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="recipe__wrapper">
+                <div class="recipe__info">
+                    <div class="recipe__detail detail--1">
+                        <img class="recipe_detail--icon" src="img/clock.png">
+                        <span class="recipe__info--data info_minutes"><b class="time__span">60 Минути</b></span>
+                    </div>
+                    <div class="recipe__detail detail--2">
+                        <img class="recipe_detail--icon" src="img/people.png">
+                        <span class="recipe__info--data"><b class="info__persons" data-number="3">3</b></span>
+                        <span>Порции</span>
+                        <div class="recipe__update__btns">
+                            <button class=" btn btn__update--serving btn__minus" data-nav="minus">
+                                <img  class="recipe_detail--icon" id="minus" src="img/minus.png">
+                            </button>
+                            <button class=" btn btn__update--serving btn__plus" data-nav="plus">
+                                <img  class="recipe_detail--icon" src="img/plus.png">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="btn--bookmark">
+                        <button class=" btn btn__bookmark--serving" >
+                            <img  class="recipe_detail--bookmark--icon " src="img/bookmark.png">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="recipe__ingredients">
+                <h2 class="recipe__heading">НЕОБХОДИМИ ПРОДУКТИ</h2>
+                <ul class="ingredients__section">
+
+                    <!-- RECIPE INGREDIENTS -->
+<!--                     
+                    <li class="recipe__ingredient">
+                        <div class="ingredients__row">
+                            <img  class="ingredient_detail--icon" src="img/check.png">
+                            <div class="ingredient__detail">
+                                <span class="ingredient_qty">3</span>
+                                <span class="unit">cups</span>
+                                testing Ingredients
+                            </div>
+                        </div>
+                    </li> -->
+                    
+                </ul>
+            </div>
+            <div class="how_to_section">
+                <h2 class="recipe__heading heading--2">КАК ДА ГО СГОТВИТЕ</h2>
+                <p class="recipe__credits">Тази рецепта е грижливо подготвена от MateKitchen.
+                    Подробни инструкции може да откриете на сайта им.</p>
+                <a class="btn__recipe__link" href ="https://matekitchen.com/recipes/sladkish-s-tikva-i-stafidi/">    
+                    <button class="btn btn__directions">
+                        КЪМ РЕЦЕПТАТА →
+                    </button>
+                </a>    
+                </div>
+            </div>
+        </div>
+    </container>
+    <div class="overlay hidden"></div>
+    <div class= "add__recipe-window hidden">
+        <button class="btn--close btn">X</button>
+        <h4>The Upload Recipes Feature is currently not implemented in this app! </h4>
+    </div>
+    <script type="module" src="/javascript/controller.js"></script>
+</body>
+</html>
