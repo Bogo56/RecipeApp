@@ -56,44 +56,40 @@
 </p>
 
 ## About The Project
-The main motivation behind this project was to greatly improve my ability in building and working with API's. I have already build a couple of API's in Python(with Flask). 
-Since JavaScript(NodeJS) was a relatively new addition in my tech stack, this was a great opportunity to both upgrade my skills in back-end development with Node and 
-to enhance my understanding of what a proper API structure is. I really wanted to make this project more authentic, so I decided to do a small website for booking tours in Bulgaria.
+Ever since I learned JavaScript, my focus was pointed primarily towards NodeJS ( and Python), since backend development is what I'm most passionate about. After a while I realized that that my frontend skills were lagging behind. I knew that frontend is important (even though I'm not very excited about it). So I decided on upgrading my competencies in using JavaScipt in it's natural habitat 😁 - on the client-side. So I made this App. It'a an SPA (vanilla JS, no React), that renders different recipes. I wanted to make it authentic - so I used bulgarian recipes. I generated the data ( almost 900 recipes) by using python to scrape popular bulgarian cooking websites and modeling that into a database, serving it trough a simple API.
 
-The **main focus of this project is the API** - where I have spent about **75%** of my efforts. I also decided to create a simple front-end (vanilla JS, HTML, CSS) that showcases an
-example of how the API might be consumed.
-
-Most of the webpages are **rendered server-side - EJS templates**. To improve experience and user notifications I have also included some frontend JS - mainly with form submition and admin menu.
-
-I have **deployed the project on my own Ubuntu 18.04 server**, so you can check it out for yourself. You'll find a link below
+I have **deployed the Flask API on my own Ubuntu 18.04 server**, and the frontend on Heroku (to save some time). You can find the link to the Project in the next section.
 
 ## Check out the Project
-As I mentioned, I have created an example frontend that uses part of the API's functionality. You can check the project at:
-https://bultravel.bogoapps.site/
+As I mentioned, I have deployed the frontend part to Heroku - so you can play around with it. Here is the link:
+https://recipe-app-2022.herokuapp.com/#467
 
-There are different types of user roles[user,guide,admin], which have different permissions.
+Login with theese credentials. It will ask them from you once you try to search.
 
-You can log **as an user** with:
-**USERNAME**: "marto@example.com"
-**PASSWORD**: "password"
-OR create an account yourself(No spam - promise :D)
+You can log with:
+**USERNAME**: "Admin"
+**PASSWORD**: "Admin"
 
-You can log in **as an admin** (access to the admin menu) with:
-**USERNAME**: "admin@admin.com"
-**PASSWORD**: "admin"
-* I have restricted the update operations to superadmins(myself) intentionally - to keep it simple 😅.
+Searching is made in bulgarian -  intentionally. I could've scraped an international site and do it all in english - BUT where is the fun in that😁
 
-I'm using **Stripe in TEST mode** - so just type **4242 4242 4242 4242** as payment card.
 
-## About the API
-### API Reference
-I have used POSTMAN for testing and building the API. I also used it to generate a simple documentation, so you can easily check it's structure. This is the link to the documentation:
-https://documenter.getpostman.com/view/16479105/UVsQriWC
+## Project Workflow
+Here, I'm outlining very briefly the phases that the project went trough from start to finish.
 
-### Features
-* Standart CRUD operations for creating and modifying Tours, Users, Bookings, Reviews
-* Filtering on resources - searching, pagination, less than/greater than, exclude/include fields, sort asc/desc, limit number of results etc.
-* Priviliges based on user role - lead-guides and admins can modify tours, only admins can modify users, only users can write reviews etc.
-* Forget password functionality. Sends a restoration link on email (expires in 10 min) for password reset.
-* Payment with Stripe - e.g receiving webhooks from strype on successfull payment.
+### Phase 1 - Creating Data
+Before creating the app, I needed some data. In this case I needed a lot of recipes - at least a couple of hundred. So where do I get that data? Well, I actually decided to create it myself, or let's use the term "borrow it"😁 from another site (only for the sake of the project). SOO I did a research on the popular cooking websites in Bulgaria, and chose one with proper structure for scraping. Then I wrote a couple of scripts in Python using the Pandas Library that:
+  1.Scraped the summary info of the recipes, shown in the "All Recipes Section", while going trough all results pages - inserting the info into a DB.
+  2.Visited every individual recipe page and scraped it's full description and ingredients - updating the recipe data in the DB.
+  3.Scraping once more - this time downloading the images (that I later upload on Cloudinary) - updating the recipes with the imgage links in the DB.
+  
+### Phase 2 - Making Data Accessible
+So now that I had the data, I had to make it available to be consumed by another entity - e.g. frontend. So I created a simple API in Flask that delivered the data
+to my frontend application.
 
+### Phase 3 - Creating the Frontend
+Now that I have laid the foundation, I could start working on the App itself.
+
+### Phase 4 - Deployment
+I have deployed the simple Flask API to my own server in the beginning, so I could test the frontend app during development with it.
+
+I deployed the frontend to Heroku - since this would save me some time, with server configuration.
