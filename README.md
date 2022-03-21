@@ -59,7 +59,9 @@
 ## About The Project
 Ever since I learned JavaScript, my focus was pointed primarily towards NodeJS ( and Python), since backend development is what I'm most passionate about. After a while I realized that that my frontend skills were lagging behind. I knew that frontend is important (even though I'm not very excited about it). So I decided on upgrading my competencies in using JavaScipt in it's natural habitat 😁 - on the client-side. So I made this App. It'a an SPA (vanilla JS, no React), that renders different recipes. I wanted to make it authentic - so I used bulgarian recipes. I generated the data ( almost 900 recipes) by using python to scrape popular bulgarian cooking websites and modeling that into a database, serving it trough a simple API.
 
-I have **deployed the Flask API on my own Ubuntu 18.04 server**, and the frontend on Heroku (to save some time). You can find the link to the Project in the next section.
+I have **deployed the Flask API on my own Ubuntu 18.04 server**, and the frontend on **Heroku** (to save some time). You can find the link to the project in the next section.
+
+* The **Frontend** part **is the main focus of this** project. The only purpose of the API is to feed data to the RecipeAPP, so the API itself is minimalistic with basic authentication.
 
 ## Check out the Project
 As I mentioned, I have deployed the frontend part to Heroku - so you can play around with it. Here is the link:
