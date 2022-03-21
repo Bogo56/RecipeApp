@@ -97,6 +97,6 @@ class Search(Resource):
 
 
 
-api.add_resource(GenerateToken,"/get_token")
-api.add_resource(Recipes,"/recipes/<string:id>")
-api.add_resource(Search,"/recipes/search")
+api.add_resource(GenerateToken,"/api/get_token")
+api.add_resource(Recipes,"/api/recipes/<string:id>")
+api.add_resource(Search,"/api/recipes/search")
