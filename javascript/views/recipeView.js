@@ -20,6 +20,7 @@ class RecipeView {
   renderResult(data) {
     this.#recipeData = data;
     let res = this.#addIngredientsHTML();
+    this.#bookmarkBtn.classList.remove("hidden");
     this.#recipeIngr.innerHTML = "";
     this.#recipeIngr.insertAdjacentHTML("afterbegin", res);
     this.#addRecipeDetails();

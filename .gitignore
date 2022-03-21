@@ -3,3 +3,8 @@
 /api_python/seed/back-up/
 /api_python/seed/images/
 /api_python/seed/images/
+/login.txt
+/api_python/__pycache__
+/api_python/resources/__pycache__
+/api_python/seed/__pycache__
+/api_python/images

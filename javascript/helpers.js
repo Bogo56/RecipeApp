@@ -6,7 +6,7 @@ import AuthError from "./errors.js";
 const timeout = function (sec) {
   return new Promise(function (_, reject) {
     setTimeout(function () {
-      reject(new Error(`Request took took more than ${sec}!`));
+      reject(new Error(`Request took took longer than ${sec} seconds!`));
     }, sec * 1000);
   });
 };
