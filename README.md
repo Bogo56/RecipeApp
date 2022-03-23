@@ -53,11 +53,11 @@
   <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white">
   <img src="https://img.shields.io/badge/OS-Ubuntu-orange?style=for-the-badge">
    <img src="https://img.shields.io/badge/Security-JWT-green?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Web Scrape-Pandas-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Web Scrape-BS4-blue?style=for-the-badge">
 </p>
 
 ## About The Project
-Ever since I learned JavaScript, my focus was pointed primarily towards NodeJS ( and Python), since backend development is what I'm most passionate about. After a while I realized that that my frontend skills were lagging behind. I knew that frontend is important (even though I'm not very excited about it). So I decided on upgrading my competencies in using JavaScipt in it's natural habitat 😁 - on the client-side. So I made this App. It'a an SPA (vanilla JS, no React), that renders different recipes. I wanted to make it authentic - so I used bulgarian recipes. I generated the data ( almost 900 recipes) by using python to scrape popular bulgarian cooking websites and modeling that into a database, serving it trough a simple API.
+Ever since I learned JavaScript, my focus was pointed primarily towards NodeJS ( and Python), since backend development is what I'm most passionate about. After a while I realized that my frontend skills were lagging behind. I knew that frontend is important (even though I'm not very excited about it). So I decided on upgrading my competencies in using JavaScipt in it's natural habitat 😁 - on the client-side. So I made this App. It'a an SPA (vanilla JS, no React), that renders different recipes. I wanted to make it authentic - so I used bulgarian recipes. I generated the data ( almost 900 recipes) by using python to scrape popular bulgarian cooking websites and modeling that into a database, serving it trough a simple API.
 
 I have **deployed the Flask API on my own Ubuntu 18.04 server**, and the frontend on **Heroku** (to save some time). You can find the link to the project in the next section.
 
@@ -67,7 +67,7 @@ I have **deployed the Flask API on my own Ubuntu 18.04 server**, and the fronten
 As I mentioned, I have deployed the frontend part to Heroku - so you can play around with it. Here is the link:
 https://recipe-app-2022.herokuapp.com/#467
 
-Login with theese credentials. It will ask them from you once you try to search.
+Login with these credentials. It will ask them from you once you try to search.
 
 You can log with:
 **USERNAME**: "Admin"
@@ -80,7 +80,7 @@ Searching is made in bulgarian -  intentionally. I could've scraped an internati
 Here, I'm outlining very briefly the phases that the project went trough from start to finish.
 
 ### Phase 1 - Creating Data
-Before creating the app, I needed some data. In this case I needed a lot of recipes - at least a couple of hundred. So where do I get that data? Well, I actually decided to create it myself, or let's use the term "borrow it"😁 from another site (only for the sake of the project). SOO I did a research on the popular cooking websites in Bulgaria, and chose one with proper structure for scraping. Then I wrote a couple of scripts in Python using the Pandas Library that:
+Before creating the app, I needed some data. In this case I needed a lot of recipes - at least a couple of hundred. So where do I get that data? Well, I actually decided to create it myself, or let's use the term "borrow it"😁 from another site (only for the sake of the project). SOO I did a research on the popular cooking websites in Bulgaria, and chose one with proper structure for scraping. Then I wrote a couple of scripts in Python using the BS4 Library that:
 
   1. Scraped the summary info of the recipes, shown in the "All Recipes Section", while going trough all results pages - inserting the info into a DB.
   2. Visited every individual recipe page and scraped it's full description and ingredients - updating the recipe data in the DB.
@@ -94,7 +94,7 @@ to my frontend application.
 Now that I have laid the foundation, I could start working on the App itself.
 
 ### Phase 4 - Deployment
-I have deployed the simple Flask API to my own server in the beginning, so I could test the frontend app during development with it.
+I have deployed the Flask API to my own server in the beginning, so I could test it with the frontend app during development.
 
 I deployed the frontend to Heroku - since this would save me some time with server configuration.
 
