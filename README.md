@@ -64,7 +64,7 @@ I have **deployed the Flask API on my own Ubuntu 18.04 server**, and the fronten
 * The **Frontend** part **is the main focus of this** project. The only purpose of the API is to feed data to the RecipeAPP, so the API itself is minimalistic with basic authentication.
 
 ## Check out the Project
-As I mentioned, I have deployed the frontend part to Heroku - so you can play around with it. Here is the link:
+As I mentioned, I have deployed the frontend part to Heroku - so you can play around with it. Here is the link(NOT Mobile responsive):
 https://recipe-app-2022.herokuapp.com/#467
 
 Login with these credentials. It will ask them from you once you try to search.
