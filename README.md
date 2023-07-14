@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://recipe-app-2022.herokuapp.com/#467"><img src="https://res.cloudinary.com/dawb3psft/image/upload/v1647878417/Portfolio/logo.png" alt="RecipeAPP" width="300"></a>
+  <a href="https://recipe-app-2022.herokuapp.com/#467"><img src="https://res.cloudinary.com/dawb3psft/image/upload/v1647878417/Portfolio/logo.png" alt="RecipeAPP " width="300"></a>
 </h1>
 
 <h4 align="center">Personal Project - Creating a Frontend JS App </h4>
